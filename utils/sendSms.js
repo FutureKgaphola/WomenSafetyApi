@@ -9,7 +9,7 @@ const from = "WomenSafety"
 const to = "27738285578"
 
 module.exports.sendSMS=async(googleUrl,victimName)=> {
-    const text = `WomenSafety.\n Hi your someone close to you (${String(victimName)}) apears to be in danger. Click the link to located them: - ${String(googleUrl)}.\n\n.`;
+    const text = `WomenSafety.\n Hi someone close to you (${String(victimName)}) appears to be in danger. Click the link to located them: - ${String(googleUrl)}.\n\n.`;
     await vonage.sms.send({to, from, text})
         .then(resp => { console.log('Message sent successfully'); console.log(resp); })
         .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
