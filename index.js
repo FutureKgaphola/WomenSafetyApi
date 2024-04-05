@@ -35,8 +35,8 @@ app.post('/falsesendsms', (req, res)=>{
   checkInternetConnected()
   .then((result) => {
     if(result){
-      const {victimName="Anonymous"} = req.body; 
-      sendSMSFalseAlarm(victimName).then(()=>{
+      const {victimName="Anonymous", date_Time="Not Set"} = req.body; 
+      sendSMSFalseAlarm(victimName,date_Time).then(()=>{
         res.json({"smsdelivery":"succesfully deliverd sms"}); 
       }).catch((err)=>{
         res.status(404).json(err);
