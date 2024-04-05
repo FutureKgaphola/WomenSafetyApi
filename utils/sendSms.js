@@ -16,7 +16,7 @@ module.exports.sendSMS=async(googleUrl,victimName)=> {
 }
 
 module.exports.sendSMSFalseAlarm=async(victimName,date_Time)=> {
-  const text = `WomenSafety.\n (${String(victimName)}) has reported the recent alert as false alarm.\n This event may have occured around ${date_Time}\n\nYou are advised to ignore it.`;
+  const text = `WomenSafety.\n (${String(victimName)}) has reported the recent alert as false alarm.\nThis event may have occured around ${date_Time}\n\nYou are advised to ignore it.`;
   await vonage.sms.send({to, from, text})
       .then(resp => { console.log('Message sent successfully'); console.log(resp); })
       .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
