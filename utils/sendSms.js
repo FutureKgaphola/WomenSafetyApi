@@ -6,7 +6,7 @@ const vonage = new Vonage({
 })
 
 const from = "WomenSafety"
-const to = "27738285578"
+const to = "27695306509"
 
 module.exports.sendSMS=async(googleUrl,victimName)=> {
     const text = `WomenSafety.\n Hi someone close to you (${String(victimName)}) appears to be in danger. Click the link to located them: - ${String(googleUrl)}.\n\n.`;
