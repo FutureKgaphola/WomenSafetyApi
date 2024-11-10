@@ -21,6 +21,7 @@ app.post('/sendsms', (req, res)=>{
     if(result){
       const {googleUrl="no message",victimName="Anonymous"} = req.body; 
       sendSMS(googleUrl,victimName).then(()=>{
+        console.log(victimName+" made a shake on thier device");
         res.json({"smsdelivery":"succesfully deliverd sms"}); 
       }).catch((err)=>{
         res.status(404).json(err);
